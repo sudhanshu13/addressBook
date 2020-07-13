@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Address Book</title>
+    <link rel="stylesheet" href="{{ absolute_url(asset('css/bootstrap.css')) }}"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Address Book</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="container">
+    {% for success_message in app.session.flashbag.get('message') %}
+        <div class="alert alert-success">{{ success_message }}</div>
+    {% endfor %}
+    </div>
+

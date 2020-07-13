@@ -1,0 +1,45 @@
+{{ include('pages/inc/header.html.twig') }}
+<div class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><h5>List Address</h5></li>
+    </ol>
+    <div class="mb-5">
+    <a href="{{ absolute_url(asset('')) }}app_dev.php/create" class="btn btn-primary">Add Address</a>
+    </div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Sr</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr class="table-secondary">
+                <td>{{ post.id }}</td>
+                <td>{{ post.firstName }}</td>
+                <td>{{ post.lastName }}</td>
+                <td>{{ post.phoneNumber }}</td>
+                <td>{{ post.emailAddress }}</td>
+                <td><a href="{{ absolute_url(asset('')) }}app_dev.php/view/{{ post.id }}"
+                       class="btn btn-primary btn-xs">View</a> <a
+                            href="{{ absolute_url(asset('')) }}app_dev.php/edit/{{ post.id }}"
+                            class="btn btn-success btn-xs">Update</a> <a
+                            href="{{ absolute_url(asset('')) }}app_dev.php/delete/{{ post.id }}"
+                            class="btn btn-danger btn-xs">Delete</a></td>
+            </tr>
+        {% else %}
+            <tr class="table-secondary">
+                <td>No Recods Found!</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{{ include('pages/inc/footer.html.twig') }}
+
+

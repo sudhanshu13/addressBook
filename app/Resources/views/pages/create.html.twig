@@ -1,0 +1,17 @@
+{{ include('pages/inc/header.html.twig') }}
+<div class="container">
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><h5>Add Address</h5></li>
+    </ol>
+    <div class="mb-5">
+          <a href="{{ absolute_url(asset('')) }}app_dev.php/post" class="btn btn-primary">Back</a>
+    </div>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+</div>
+
+{{ include('pages/inc/footer.html.twig') }}
